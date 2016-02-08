@@ -1,0 +1,135 @@
+README - plain text
+
+Dan Wilder
+7 February, 2016
+
+Project URL: http://www.umsl.edu/~dlwh6f/
+
+Tested on:
+    - Chrome
+    - Firefox
+    - Internet Explorer
+    - Ubuntu Web Browser
+
+Group Members: 
+  - Abdullah Aldossary
+  - Richard Chaidex
+  - Alex Kappelmann      
+  - Myself (Dan Wilder)
+
+Each group member worked on individual project, but
+we stayed in touch in case of questions. We also 
+compared our results to make sure that they were
+consistent with each other.
+
+===================================================
+Project Description
+===================================================
+UMSL - CS 4500 - Software Profession - Spring 2016
+Professor: Keith Miller
+
+The goal of this project was a continuation of the
+"paint blob" program : NxM grid, randomly select a
+cell with replacement, track how many selections 
+occur before each cell selected at least once and
+track the number of times the cell with the most
+selections was selected.
+
+This assignment involved running the simulation
+a user-specified number of times for a grid of 
+user-specified number of rows and columns. 
+Individual run statistics were collected as well
+as statistics about the run in general. These
+were to be output in a form easy to copy to a 
+spreadsheet. 
+
+Individual Statistics
+    - Number of paintblobs used before each painted
+      once
+    - Depth of deepest cell
+
+Overal Statistics
+    - min, max, and mean for both of the individual
+      run statistics
+
+Some input limits were established in class:
+    - Rows, cols, and runs were to be between 
+      1 & 100 (inclusive)
+
+===================================================
+Project Objectives
+===================================================
+1) Satisfy project specifications
+2) Simple to use application 
+3) Portable application
+4) Implement a responsive design  
+5) Learn a new technology
+
+I choose to implement this project as a webpage
+because it seemed the most obvious to satisfy
+these objectives.
+
+Basically, any computer with a web browser and
+internet access can reach the page. Thus, it is
+highly portable. Furthermore, I used
+techniques such as media queries and flexbox
+to make the page look good on a wide variety of
+devices such as a mobile phone. This achieved
+the responsive design I was looking for. 
+
+During the course of this project, I taught myself
+how to use some of jQuery.
+
+===================================================
+Design Decisions
+===================================================
+As for the ease of use, I put only what I thought
+was the most important information on the screen.
+This was: title, brief description, link to
+this document, input fields, single control button, 
+status line, and a table of the results. I wanted
+a sleek, yet simple design - it should clear by 
+itself what to do.
+
+The status line is a just a single sentence so the
+user has a better idea what is hapening. The status
+line displays a message to indicate when it has 
+completed a job - generating a table with the 
+interested statistics. It is also used to display
+an error message if invalid input was given.
+Valid input are the integers between 1 & 100
+inclusive.
+
+The table is initially hidden from the user until
+he/she clicks the control button. When the button
+is clicked, the program displays the table, 
+calculates a run, and appends the results to the
+table. It does this for each run then at the end
+will append the overall results to the table.
+Each time the button is clicked the old results
+are erased before rewriting to the table. Entering
+invalid input also clears the table to emphasize
+the fact that bad input was given. 
+
+To prevent the (very unlikely) possibility of 
+infinite run time, an individual run can fail if
+it loops too many time. This limit is equal
+to either (rows*cols)^2 or 1000 - whichever is
+greater. This was chosen somewhat arbitrarily, but
+was tested extensively and I was unable to make
+any individual run fail using that limit.
+
+If despite all odds a run does fail, 'N/A' will
+be placed in the corresponding result table cells 
+to indicate this fact. Failed runs are disregarded
+in calculating the overall statistics. This is 
+clear in the produced table which has a field
+that displays how many runs were successful (and
+thus used in the calculations). This field will
+almost surely always be the the number of runs
+the user specified.
+ 
+Finally, the  table was chosen to hold results because
+it naturally conveys the meaning of the results, and
+is easy to copy/paste to a spreadsheet as per 
+project specifications. 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- 
+    Web page satisfying part 3 of the paint blob project.
+
+    Dan L. Wilder, 1 February 2016 
+
+    Group Members: 
+        - Abdullah Aldossary
+        - Richard Chaidex
+        - Alex Kappelmann 
+        - Myself (Dan Wilder)
+-->
+
+<html>
+<head>
+    <!-- Doesn't get much more meta than this -->
+    <meta name="author" content="Dan Wilder">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title>PaintBlob</title>
+
+    <!-- Styles will be in this file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Access to jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Actual calculations and behavior is defined in this file -->
+    <script type="text/javascript" src="paintBlob.js"></script>
+</head>
+
+<body>
+    <!-- Main container: divide page into 3 panes -->
+    <div id="main-content" class="content-container">
+
+        <!-- Pane #1: Stylish Title -->
+        <div id="title-pane" class="content-pane">
+                <!-- "PaintBlob" in color - long line prevents spacing-->
+                <span style="color:red">P</span><span style="color:orange">a</span><span style="color:yellow">i</span><span style="color:green">n</span><span style="color:blue">t</span><span style="color:purple">B</span><span style="color:blue">l</span><span style="color:green">o</span><span style="color:yellow">b</span>
+        </div>
+
+        <!-- Pane #2: User iteration  -->
+        <div id="user-pane" class="content-pane">
+
+            <!-- Provide brief description and link to verbose description (README) -->
+            <p id="description">
+                Runs the simulation a number of times for a grid of
+                specified dimensions. Calculates and displays run statistics.
+                For detailed information check out the <a href="README">README</a>. 
+            </p>
+
+            <!-- Nested container that has 2 inner panes for user input -->
+            <div id="input-container" class="content-container">
+
+                <!-- Inner Pane #1: Input fields for specifying rows and cols -->
+                <div id="dimension-pane" class="content-pane">
+                    <div class="input-wrapper"> 
+                        <div class="input-label">Rows:</div>
+                        <input id="rowInput" type="number" min="1" max="100" step="1" value="50">
+                    </div>
+
+                    <div class="input-wrapper">
+                        <div class="input-label">Cols:</div>
+                        <input id="colInput" type="number" min="1" max="100" step="1" value="50">
+                    </div>
+                </div>
+
+                <!-- Inner Pane #2: Input field for specifying number of runs and a button to start/stop -->
+                <div id="run-submit-pane" class="content-pane">
+                    <div class="input-wrapper">
+                        <div class="input-label">Runs:</div>
+                        <input id="runInput" type="number" min="1" max="100" step="1" value="50">
+                    </div>
+
+                    <!-- Clicking will activate javascript code (see 'paintBlob.js') -->
+                    <div class="input-wrapper">
+                        <div class="input-label">Stats:</div>
+                        <button id="user-btn" class="inner-pane-content"><strong>NEW</strong></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pane #3: Output-->
+        <div id="result-pane" class="content-pane">
+
+            <p id ="talk">
+                <!-- "PaintBlob" in multi color - Long line to prevent spacing -->
+                <span style="color:red">P</span><span style="color:orange">a</span><span style="color:yellow">i</span><span style="color:green">n</span><span style="color:blue">t</span><span style="color:purple">B</span><span style="color:blue">l</span><span style="color:green">o</span><span style="color:yellow">b</span>
+
+                <!-- Status line informs user of current program state including invalid input.
+                Javascript code will modify this accordingly. -->
+                says, "<span id="status">Hello</span>"
+            </p>
+            
+            <!-- Javascript code will hide/show and populate/delete table accordingly. -->
+            <div class="table-scroll">
+                <table id="result-table">
+                    <thead>
+                        <tr><th>Run #</th><th>Paintblobs</th><th>Depth</th></tr>
+                    </thead>
+
+                    <tbody id="result-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

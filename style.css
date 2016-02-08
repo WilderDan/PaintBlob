@@ -1,0 +1,234 @@
+/*   style.css : Style sheet for paintBlob3.html
+ *
+ *   Dan L. Wilder, 4 February 2016
+ *
+ *   Group Members: 
+ *      - Abdullah Aldossary
+ *      - Richard Chaidex
+ *      - Alex Kappelmann
+ *      - Myself (Dan Wilder)       
+ *
+ *   Objective: Create a webpage that looks nice on wide variety
+ *              of devices - no matter its screen size.
+ *
+ *   Styles applied in order of smallest viewport to largest
+ */ 
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+p {
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+button, input[type="number"]
+{
+    text-align: center;
+    width: 50%;
+    margin-bottom: 10%
+}
+
+.content-container {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.content-pane {
+    text-align: center;
+}
+
+#title-pane {
+    height: 10%;
+    width: 100%;
+    font-size: 8vh;
+    order: 1;
+}
+
+#user-pane {
+    height: 45%;
+    width: 100%;
+    order: 2;
+}
+
+#result-pane {
+    height: 45%;
+    width: 100%;  
+    order: 3;  
+}
+
+/* sub pane */
+#dimension-pane {
+    width: 50%;
+    height: 80%;
+}
+
+/* sub pane */
+#run-submit-pane {
+    width: 50%;
+    height: 80%;
+}
+
+.table-scroll {
+    overflow: auto;
+    /* Needed to scroll */
+    height: 60%;
+}
+
+.input-label {
+    display: inline-block;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    font-size: xx-small;
+    border: 1px solid white;
+}
+
+/* INITIAL FONT SIZE */
+p, button, input[type="number"], .input-label, table, td, th {
+    font-size: xx-small;
+}
+
+/* Responsive styles using media queries */
+
+
+@media screen and (min-height: 300px) {
+    #talk {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-height: 450px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: small;
+    }
+    #talk {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 200px) and (min-height: 250px) {
+    #talk {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 250px) and (min-height: 300px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 250px) and (min-height: 400px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 450px) and (min-height: 250px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: small;
+    }
+}
+
+/* CHANGE LAYOUT */
+@media screen and (min-width: 500px) {
+
+    #title-pane {
+        height: 15%;
+        width: 100%;
+        font-size: 10vh;
+    }
+
+    #user-pane {
+        width: 50%;
+        height: 85%;
+    }
+
+    #result-pane {
+        width: 50%;
+        height: 85%;
+    }
+
+    .input-label {
+        display: block;
+        font-size: x-small;
+    }
+
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: x-small;
+    }
+}
+
+@media screen and (min-width: 500px) and (min-height: 300px) {
+    p, button, input[type="number"], .input-label, table, td, th, #talk {
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 500px) and (min-height: 400px) {
+    p, button, input[type="number"], .input-label, table, td, th, #talk {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 500px) and (min-height: 500px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: large;
+    }
+    #talk {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width: 500px) and (min-height: 600px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: large;
+    }
+
+    #talk {
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 500px) and (min-height: 700px) {
+    p, button, input[type="number"], .input-label, table, td, th {
+        font-size: x-large;
+    }
+    #talk {
+        font-size: x-large;
+    }
+}
+
+/* Upper limit where width and height will remain static */
+@media screen and (min-width: 750px) {
+
+    #main-content {
+        width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+
+    #main-content {
+        height: 1000px;
+    }
+}
